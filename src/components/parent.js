@@ -19,7 +19,7 @@ const Parent = () => {
     }
 
     return (
-        <div>
+        <div class="parent">
             <h1>Parent Component</h1>
             <form onSubmit={handleAddToCart}>
                 <input type="text" name="itemName" placeholder="Item Name" />
