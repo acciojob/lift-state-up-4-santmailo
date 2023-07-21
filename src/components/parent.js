@@ -3,15 +3,21 @@ import Child from './child';
 
 const Parent = () => {
     const [cartItems, setCartItems] = React.useState([]);
+    const [itemName, setItemName] = React.useState('');
+    const [itemPrice, setItemPrice] = React.useState(0);
 
     const handleAddToCart = (event) => {
-        event.preventDefault();
-        const name = event.target.itemName.value;
-        const price = event.target.itemPrice.value;
-
-        if(!name || !price) return alert('Please enter both name and price');
-        const newItem = { name, price };
+        if(!itemName || !itemPrice) return alert('Please enter both name and price');
+        const newItem = { name:itemName, price:itemPrice };
         setCartItems((prevItems) => [...prevItems, newItem]);
+    }
+
+    const nameChange = (event) => {
+        setItemName(event.target.value);
+    }
+
+    const priceChange = (event) => {
+        setItemPrice(event.target.value);
     }
 
     const handleRemoveFromCart = (key) => {
@@ -19,13 +25,11 @@ const Parent = () => {
     }
 
     return (
-        <div class="parent">
+        <div className="parent">
             <h1>Parent Component</h1>
-            <form onSubmit={handleAddToCart}>
-                <input type="text" name="itemName" placeholder="Item Name" />
-                <input type="number" name="itemPrice" placeholder="Item Price" />
-                <button type="submit">Add to Cart</button>
-            </form>
+                <input type="text" name="itemName" placeholder="Item Name" onChange={nameChange}/>
+                <input type="number" name="itemPrice" placeholder="Item Price" onChange={priceChange}/>
+                <button onClick={handleAddToCart}>Add to Cart</button>
             <Child cartItems={cartItems} handleRemoveItem = {handleRemoveFromCart}/>
         </div>
     );
