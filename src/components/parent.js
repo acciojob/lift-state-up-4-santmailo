@@ -6,7 +6,7 @@ const Parent = () => {
     const [itemName, setItemName] = React.useState('');
     const [itemPrice, setItemPrice] = React.useState(0);
 
-    const handleAddToCart = (event) => {
+    const addItem = (event) => {
         if(!itemName || !itemPrice) return alert('Please enter both name and price');
         const newItem = { name:itemName, price:itemPrice };
         setCartItems((prevItems) => [...prevItems, newItem]);
@@ -20,7 +20,7 @@ const Parent = () => {
         setItemPrice(event.target.value);
     }
 
-    const handleRemoveFromCart = (key) => {
+    const removeItem = (key) => {
         setCartItems((prevItems) => prevItems.filter((item,index) => index !== key));
     }
 
@@ -29,8 +29,8 @@ const Parent = () => {
             <h1>Parent Component</h1>
                 <input type="text" name="itemName" placeholder="Item Name" onChange={nameChange}/>
                 <input type="number" name="itemPrice" placeholder="Item Price" onChange={priceChange}/>
-                <button onClick={handleAddToCart}>Add to Cart</button>
-            <Child cartItems={cartItems} handleRemoveItem = {handleRemoveFromCart}/>
+                <button onClick={addItem}>Add to Cart</button>
+            <Child cartItems={cartItems} handleRemoveItem = {removeItem}/>
         </div>
     );
 }
