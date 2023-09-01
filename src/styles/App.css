@@ -1,1 +1,15 @@
 
+.parent{
+    background-color: lightgreen;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+}
+
+.child{
+    background-color: lightblue;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+}
+
