@@ -3,7 +3,7 @@ import React from "react";
 import './../styles/App.css';
 
 const Parent = () => {
-  let [cartitems, setCartitems] = React.useState([]);
+  let [cartitems, setCartitems] = React.useState([{item: "Apple", price: 100}]);
 
   const addItem = (e) => {
     e.preventDefault();
