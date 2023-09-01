@@ -17,6 +17,7 @@ const Parent = () => {
   const deleteItem = (index) => {
     const newCartItems = [...cartitems];
     newCartItems.splice(index, 1);
+    console.log(newCartItems);
     setCartitems(newCartItems);
   }
 
