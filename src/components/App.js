@@ -45,7 +45,7 @@ const Child = ({cartitems, deleteItem}) => {
   return (
     <div className="child">
       <h1>Child component</h1>
-      <ul className="cart-items">
+      <ul className="child">
         {cartitems.map((item,index) => (
           <li key={index+1}>
             <span>{item.item}</span>  &nbsp;  &nbsp;  &nbsp;-  &nbsp;  &nbsp;  &nbsp;

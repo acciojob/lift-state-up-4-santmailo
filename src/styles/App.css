@@ -10,6 +10,13 @@
     background-color: lightblue;
     padding: 10px;
     margin: 10px;
-    border: 1px solid black;
 }
 
+
+.child li{
+    background-color: lightblue;
+    padding: 10px;
+    margin: 10px;
+    list-style-type: none;
+    border: 1px solid black;
+}
